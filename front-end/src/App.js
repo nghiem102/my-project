@@ -8,6 +8,9 @@ import EditCategory from './pages/admin/EditCategory';
 import EditForm from './pages/admin/EditForm';
 import Home from './pages/admin/Home';
 import Products from './pages/admin/Products';
+import HomePage from './pages/client/HomePage';
+import ProductDetail from './pages/client/ProductDetail';
+import ProductsPage from './pages/client/ProductsPage';
 import AdminLayout from './pages/layouts/AdminLayout';
 import WebsiteLayout from './pages/layouts/WebsiteLayout';
 
@@ -15,7 +18,11 @@ function App() {
   return (
     <div>
       <Routes>
-        <Route path='/' element={<WebsiteLayout/>}/>
+        <Route path='/' element={<WebsiteLayout/>}>
+          <Route index element={<HomePage/>} />
+          <Route path='product' element={<ProductsPage/>} />
+          <Route path='productDetail/:id' element={<ProductDetail/>} />
+        </Route>
         <Route path='admin' element={<AdminLayout/>} >
           <Route index element={<Navigate to={'dashboard'} />} />
           <Route path='dashboard' element={<Dashboard/>} >

@@ -8,6 +8,20 @@ export const listProduct = createAsyncThunk(
         return data
     }
 )
+export const productByCategory = createAsyncThunk(
+    'product/productByCategory',
+    async (id) => {
+        const {data} = await axios.get(`http://localhost:3001/api/categories/${id}/products`)
+        return data.products
+    }
+)
+export const readProduct = createAsyncThunk(
+    'product/readProduct',
+    async (id) => {
+        const {data} = await axios.get('http://localhost:3001/api/products/'+id)
+        return data
+    }
+)
 export const remove = createAsyncThunk(
     'product/removeProduct',
     async (id) => {
@@ -34,7 +48,8 @@ export const updateProduct = createAsyncThunk(
 const productSlice = createSlice({
     name: 'product',
     initialState: {
-        value: []
+        value: [],
+        product: {}
     },
     extraReducers: (builder) => {
         builder.addCase(listProduct.fulfilled, (state,action) => {
@@ -48,6 +63,12 @@ const productSlice = createSlice({
         })
         builder.addCase(updateProduct.fulfilled, (state,{payload}) => {
             state.value = state.value.map(item => item._id !== payload._id ? item : payload)
+        })
+        builder.addCase(readProduct.fulfilled, (state,{payload}) => {
+            state.product = payload
+        })
+        builder.addCase(productByCategory.fulfilled, (state,{payload}) => {
+            state.value = payload
         })
     }
 })
