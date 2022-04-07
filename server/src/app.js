@@ -16,6 +16,7 @@ app.use('/api',productRoute)
 app.use('/api',categoryRoute)
 
 
+
 mongoose.connect('mongodb://localhost:27017/shoes-shop')
     .then(() => console.log("connected db"))
     .catch(error => console.log(error))
