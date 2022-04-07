@@ -1,0 +1,177 @@
+.product-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 25px 0;
+    font-size: 0.9em;
+    min-width: 400px;
+    border-radius: 5px 5px 0 0;
+    overflow: hidden;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+}
+
+.product-table thead tr {
+    background-color: #3C91E6;
+    color: #ffffff;
+    text-align: left;
+    font-weight: bold;
+}
+
+.product-table th,
+.product-table td {
+    padding: 12px 15px;
+}
+
+.product-table tbody tr {
+    font-weight: bolder;
+    border-bottom: 1px solid #dddddd;
+}
+
+.product-table tbody tr:nth-of-type(even) {
+    background-color: #f3f3f3;
+}
+
+.product-table tbody tr:last-of-type {
+    border-bottom: 2px solid #3C91E6;
+}
+
+.product-table tbody tr:hover {
+    font-weight: bold;
+    color: #3C91E6;
+}
+
+.btn-add {
+    margin-top: 30px;
+    padding: 15px 25px;
+    border: unset;
+    border-radius: 15px;
+    color: #212121;
+    z-index: 1;
+    background: #e8e8e8;
+    position: relative;
+    font-weight: 1000;
+    font-size: 17px;
+    -webkit-box-shadow: 4px 8px 19px -3px rgba(0,0,0,0.4);
+    box-shadow: 4px 8px 19px -3px rgba(0,0,0,0.4);
+    transition: all 250ms;
+    overflow: hidden;
+}
+   
+.btn-add::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 0;
+    border-radius: 15px;
+    background-color: #3C91E6;
+    z-index: -1;
+    -webkit-box-shadow: 4px 8px 19px -3px rgba(0,0,0,0.4);
+    box-shadow: 4px 8px 19px -3px rgba(0,0,0,0.4);
+    transition: all 250ms
+}
+
+.add-link {
+    color: #3C91E6;
+    transition: 250ms;
+}
+   
+.btn-add:hover .add-link {
+    color: #e8e8e8;
+}
+   
+.btn-add:hover::before {
+    width: 100%;
+}
+
+.btn-delete {
+    position: relative;
+    width: 120px;
+    height: 50px;
+    margin-right: 0;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    background: red;
+    border: none;
+    border-radius: 5px;
+    box-shadow: 1px 1px 3px rgba(0,0,0,0.15);
+    background: #e62222;
+}
+
+.btn-delete, .btn-delete span {
+    transition: 200ms;
+}
+
+.btn-delete .text {
+    transform: translateX(25px);
+    color: white;
+    font-weight: bold;
+}
+
+.btn-delete .icon {
+    position: absolute;
+    border-left: 1px solid #c41b1b;
+    transform: translateX(80px);
+    height: 40px;
+    width: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.btn-delete i {
+    color: #eee;
+    font-size: 18px;
+}
+
+.btn-delete:hover {
+    background: #ff3636;
+}
+
+.btn-delete:hover .text {
+    color: transparent;
+}
+
+.btn-delete:hover .icon {
+    width: 120px;
+    border-left: none;
+    transform: translateX(0);
+}
+
+.btn-delete:focus {
+    outline: none;
+}
+
+.btn-delete:active .icon i {
+    transform: scale(0.8);
+}
+
+
+.btn-edit {
+    width: 80px;
+    background-color: rgb(20, 87, 244);
+    border: 1px solid rgb(20, 87, 244);
+    padding: 12px 20px;
+    border-radius: 7px;
+    transition: .3s;
+}
+
+.btn-edit .btn-link {
+    width: 100%;
+    color: #fff;
+}
+   
+.btn-edit:hover {
+    cursor: pointer;
+    border: 1px solid rgb(20, 87, 244);
+    background-color: transparent;
+}
+.btn-edit:hover .btn-link {
+    color: rgb(20, 87, 244);
+}
+   
+.btn-edit:focus {
+    box-shadow: 0px 0px 0px 5px rgba(20, 87, 244, 0.37), 0px 0px 0px 10px rgba(20, 87, 244, 0.38);
+    outline: none;
+}
