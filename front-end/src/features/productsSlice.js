@@ -18,28 +18,28 @@ export const productByCategory = createAsyncThunk(
 export const readProduct = createAsyncThunk(
     'product/readProduct',
     async (id) => {
-        const {data} = await axios.get('https://my-shop-phi.vercel.app/api/products/'+id)
+        const {data} = await axios.get('http://localhost:3001/api/products/'+id)
         return data
     }
 )
 export const remove = createAsyncThunk(
     'product/removeProduct',
     async (id) => {
-        const {data} = await axios.delete('https://my-shop-phi.vercel.app/api/products/'+id)
+        const {data} = await axios.delete('http://localhost:3001/api/products/'+id)
         return data
     }
 )
 export const createProduct = createAsyncThunk(
     'product/createProduct',
     async (product) => {
-        const {data} = await axios.post('https://my-shop-phi.vercel.app/api/products',product)
+        const {data} = await axios.post('http://localhost:3001/api/products',product)
         return data
     }
 )
 export const updateProduct = createAsyncThunk(
     'product/updateProduct',
     async (product) => {
-        const {data} = await axios.put('https://my-shop-phi.vercel.app/api/products/'+product._id,product)
+        const {data} = await axios.put('http://localhost:3001/api/products/'+product._id,product)
         return data
     }
 )

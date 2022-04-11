@@ -25,8 +25,3 @@ const POST = 3001
 app.listen(POST, () => {
     console.log("server is running :",POST);
 })
-
-app.use(express.static(path.join(__dirname, '../front-end', 'build')));
-  app.get('/*', (req, res) => {
-    res.sendFile(path.join(__dirname, '../front-end', 'build', 'index.html'));
-  })
